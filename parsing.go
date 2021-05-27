@@ -214,13 +214,13 @@ func readToken(stream *lexerStream, state lexerState, functions map[string]Expre
 			stream.rewind(-1)
 
 			// check to see if this can be parsed as a time.
-      kind = STRING
-      if !opts.skipDateParsing {
-        tokenTime, found = tryParseTime(tokenValue.(string))
-        if found {
-          kind = TIME
-          tokenValue = tokenTime
-        }
+			kind = STRING
+			if !opts.skipDateParsing && character == '\'' {
+				tokenTime, found = tryParseTime(tokenValue.(string))
+				if found {
+					kind = TIME
+					tokenValue = tokenTime
+				}
 			}
 			break
 		}

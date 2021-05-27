@@ -189,6 +189,8 @@ What operators and types does this support?
 * Ternary conditional: `?` `:`
 * Null coalescence: `??`
 
+Notice: Difference with original fork: only ' used for Date constants, " is excluded
+
 See [MANUAL.md](https://github.com/Knetic/govaluate/blob/master/MANUAL.md) for exacting details on what types each operator supports.
 
 Types
