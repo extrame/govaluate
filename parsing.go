@@ -172,7 +172,10 @@ func readToken(stream *lexerStream, state lexerState, functions map[string]Expre
 			function, found = functions[tokenString]
 			if found {
 				kind = FUNCTION
-				tokenValue = function
+				tokenValue = &Function{
+					Name: tokenString,
+					Fn:   function,
+				}
 			}
 
 			// accessor?

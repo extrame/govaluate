@@ -314,7 +314,7 @@ func planFunction(stream *tokenStream) (*evaluationStage, error) {
 
 		symbol:          FUNCTIONAL,
 		rightStage:      rightStage,
-		operator:        makeFunctionStage(token.Value.(ExpressionFunction)),
+		operator:        makeFunctionStage(token.Value.(*Function).Fn),
 		typeErrorFormat: "Unable to run function '%v': %v",
 	}, nil
 }

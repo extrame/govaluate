@@ -6,3 +6,8 @@ package govaluate
 	An error returned will halt execution of the expression.
 */
 type ExpressionFunction func(arguments ...interface{}) (interface{}, error)
+
+type Function struct {
+	Name string
+	Fn   ExpressionFunction
+}
